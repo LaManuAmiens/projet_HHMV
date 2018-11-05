@@ -4,7 +4,10 @@
 			<div class="col-md-12">
 				<nav class="navbar navbar-expand-lg navbar-dark">
 					<a href="#" class="brand">Agence Tout Ris(k)me</a>
-					<div class="collapse navbar-collapse">
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+	         <span class="navbar-toggler-icon"></span>
+	       </button>
+				<div class="collapse navbar-collapse" id="navbarResponsive">
 						<ul class="navbar-nav">
 							<li class="nav-item">
 								<a href="#" class="nav-link">La Corée</a>
@@ -82,13 +85,11 @@
 							</div>
 						</div>
 					</div>
-					<div class="container-fluid">
+					<div class="container-fluid" id="cartesInfo">
 						<div class="row">
-							<div class="col-4"  ng-repeat="data in mydata">
+							<div class="col-md-4 sm-12"  ng-repeat="data in mydata">
 								<div class="card">
-									<!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
 									<div class="card-body">
-										<!-- {{data.id}} -->
 										<h5 class="card">{{data.name}}</h5>
 										<p class="card-text">{{data.price}} {{data.image}} {{data.category}}</p>
 										<a href="#/pay" class="btn btn-primary">Plus d'info</a>

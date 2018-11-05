@@ -22,6 +22,9 @@
 								<a href="#" class="nav-link">Volcan en Activité</a>
 							</li>
 							<li class="nav-item">
+								<a href="#" class="nav-link">L'île de Jacob</a>
+							</li>
+							<li class="nav-item">
 								<a href="#" class="nav-link">Contacts</a>
 							</li>
 						</ul>
@@ -58,21 +61,21 @@
 						<div class="carousel-inner">
 							<div class="carousel-item active">
 								<img src="imgs/espace2.jpg" alt="Los Angeles" width="1100" height="500">
-								<div class="carousel-caption">
+								<div class="carousel-caption" style="color: black;">
 									<h3>Vous voulez toucher les étoiles?</h3>
 									<p>C'est par ici !</p>
 								</div>
 							</div>
 							<div class="carousel-item">
 								<img src="imgs/corée.jpg" alt="Chicago" width="1100" height="500">
-								<div class="carousel-caption">
+								<div class="carousel-caption" style="color: white;">
 									<h3>Promotion exceptionnelle sur votre séjour en Corée du Nord!</h3>
 									<p>L'aller simple à prix simple!</p>
 								</div>
 							</div>
 							<div class="carousel-item">
 								<img src="imgs/tchetchenie.jpg" alt="New York" width="1100" height="500">
-								<div class="carousel-caption" style="color: red">
+								<div class="carousel-caption" style="color: red;">
 									<h3>La folle ambiance Tchétchène</h3>
 									<p>A prix fou!</p>
 								</div>
@@ -83,11 +86,11 @@
 						<div class="row">
 							<div class="col-4"  ng-repeat="data in mydata">
 								<div class="card">
-									<img class="card-img-top" src="..." alt="Card image cap">
+									<!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
 									<div class="card-body">
-										{{data.id}}
-										<h5 class="card">{{data.picture}}</h5>
-										<p class="card-text">{{data.price}} {{data.image}} {{data.name}} {{data.category}}</p>
+										<!-- {{data.id}} -->
+										<h5 class="card">{{data.name}}</h5>
+										<p class="card-text">{{data.price}} {{data.image}} {{data.category}}</p>
 										<a href="#/pay" class="btn btn-primary">Plus d'info</a>
 									</div>
 								</div>
@@ -100,12 +103,13 @@
 							<div class="col-md-12" id="body">
 								<div  class="jumbotron" ng-repeat="productoTienda in productosTienda">
 									<h4>{{productoTienda.name}} </h4>
-									<img ng-src="{{productoTienda.picture}}" id="photo" /> <br>
+									<img ng-src="{{productoTienda.picture}}" id="photo" />
 									<input type="number" ng-init="productoTienda.total=0" ng-model="productoTienda.total">
 								</input>
-								<button type="button" class="btn btn-primary" ng-click="add(productoTienda)">
-									<a href="" ng-click="add(productoTienda)">
-										Prix: {{ roundCurrency(productoTienda.price) }} €
+								<button type="button" class="btn btn-dark" ng-click="add(productoTienda)">
+									<a href="#" ng-click="add(productoTienda)" id="buttonCard">
+										<!-- Prix: {{ roundCurrency(productoTienda.price) }} € -->
+										Ajouter au panier
 									</a>
 								</button>
 								<!-- Button trigger modal -->
@@ -176,4 +180,13 @@
 										</div>
 									</div>
 								</div>
+								<footer id="contact" style="background-color: #141452; decoration: none; color: #05668d; font-size:20px; font-style: bold;">
+									<div class="container-fluid">
+										<div class="row" >
+											<div class="col-md-12 text-center my-5">
+												<a href="mailto:contact@agtori.com">contact@agtori.com</a>
+											</div>
+										</div>
+									</div>
+								</footer>
 							</div>

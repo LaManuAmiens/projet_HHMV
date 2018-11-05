@@ -1,8 +1,8 @@
 [
-  {"id": "1324551", "category": "sans retour", "name": "Corée", "price": "300 dispaus", "picture" : "imgs/corée.png"},
-  {"id": "2436725", "category": "étoile", "name": "l'espace", "price": "1500", "picture": "imgs/carrito.jpg"},
-  {"id": "3345698", "category": "Detalles", "name": "Carrito con chupetes", "price": "1.2", "picture": "imgs/carrito_chupetes.jpg"},
-  {"id": "4345788", "category": "Detalles", "name": "Cesta", "price": "1.6", "picture": "imgs/cesta.jpg"},
-  {"id": "5731534", "category": "Detalles", "name": "Otros", "price": "0.5", "picture": "imgs/otros.jpg"}
-
+  {"id": "Corée du Nord", "category": "sans retour", "name": "Corée du Nord", "price": "200 €"},
+  {"id": "L'espace", "category": "étoile", "name": "l'espace", "price": "1500 €"},
+  {"id": "Volcan", "category": "Volcan", "name": "Volcan en éruption", "price": "425.50 €"},
+  {"id": "La Tchétchènie", "category": "Pays de l'Est", "name": "La Tchétchènie", "price": "380.25 €"},
+  {"id": "Les Profondeurs", "category": "Profondeurs", "name": "Plongée avec les requins", "price": "1000.20 €"},
+  {"id": "L'île de Jacob", "category": "Dharma", "name": "Les Autres", "price": "48151623.42 €"}
 ]

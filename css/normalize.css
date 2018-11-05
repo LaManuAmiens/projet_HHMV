@@ -2,13 +2,12 @@
   height: 80%;
   width:  100%;
 }
-#navbar {
-
-
+#buttonCard{
+  decoration: none;
+  color: white;
 }
 #modal {
   width: 120%;
-
 }
 .carousel-inner img {
     width: 100%;

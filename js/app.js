@@ -85,12 +85,12 @@ app.controller("homeController", function($scope, $shop, $http)
 	{
 		if($shop.remove(id))
 		{
-			alert("Produit retirer");
+			alert("Produit supprimé");
 			return;
 		}
 		else
 		{
-			alert("Une erreur s'est produite lors de l'élimination du produit, sûrement parce qu'il n'existe pas");
+			alert("Une erreur est survenue lors de la supression du produit, sûrement parce qu'il n'existe pas");
 			return;
 		}
 	}
@@ -113,10 +113,11 @@ app.controller("homeController", function($scope, $shop, $http)
 	*/
 	$scope.productosTienda =
 	[
-	{"id": 1, "category": "Detalles", "name": "Corée du nord", "price": 200, "picture": "imgs/corée.jpg"},
-	{"id": 2, "category": "Detalles", "name": "Voyage dans l'espace", "price": 1500, "picture": "imgs/espace2.jpg"},
-	{"id": 3, "category": "Detalles", "name": "Volcan", "price": 425.5, "picture": "imgs/volcan.jpeg"},
-	{"id": 4, "category": "Detalles", "name": "La Tchetchenie", "price": 380.25, "picture": "imgs/tchetchenie2.jpg"},
-	{"id": 5, "category": "Detalles", "name": "Les profondeurs", "price": 1000.2, "picture": "imgs/souslamer.jpg"}
+	{"id": 1, "category": "sans retour", "name": "Corée du Nord", "price": 200, "picture": "imgs/corée.jpg"},
+	{"id": 2, "category": "étoile", "name": "L'espace", "price": 1500, "picture": "imgs/espace2.jpg"},
+	{"id": 3, "category": "Volcan", "name": "Volcan en éruption", "price": 425.5, "picture": "imgs/volcan.jpeg"},
+	{"id": 4, "category": "Pays de l'Est", "name": "La Tchétchènie", "price": 380.25, "picture": "imgs/tchetchenie2.jpg"},
+	{"id": 5, "category": "Profondeurs", "name": "Les profondeurs", "price": 1000.2, "picture": "imgs/souslamer.jpg"},
+  {"id": 6, "category": "Dharma", "name": "L'île de Jacob", "price": 48151623.42, "picture": "imgs/lost.png"}
 	];
 });

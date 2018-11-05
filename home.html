@@ -2,21 +2,27 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-12">
-				<nav class="navbar navbar-expand-md bg-dark navbar-dark" id="navbar">
-					<a class="navbar-brand" href="#">Agence Tout Ris(k)me</a>
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-						<span class="navbar-toggler-icon"></span>
-					</button>
-					<div class="collapse navbar-collapse" id="collapsibleNavbar">
+				<nav class="navbar navbar-expand-lg navbar-dark">
+					<a href="#" class="brand">Agence Tout Ris(k)me</a>
+					<div class="collapse navbar-collapse">
 						<ul class="navbar-nav">
 							<li class="nav-item">
-								<a class="nav-link" href="#">Link</a>
+								<a href="#" class="nav-link">La Corée</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="#">Link</a>
+								<a href="#" class="nav-link">L'Espace</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="#">Link</a>
+								<a href="#" class="nav-link">La tchetchenie</a>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link">Sous la Mer</a>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link">Volcan en Activité</a>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link">Contacts</a>
 							</li>
 						</ul>
 					</div>
@@ -53,22 +59,37 @@
 							<div class="carousel-item active">
 								<img src="imgs/espace2.jpg" alt="Los Angeles" width="1100" height="500">
 								<div class="carousel-caption">
-									<h3>Corée</h3>
-									<p>We had such a great time in LA!</p>
+									<h3>Vous voulez toucher les étoiles?</h3>
+									<p>C'est par ici !</p>
 								</div>
 							</div>
 							<div class="carousel-item">
-								<img src="imgs/espace.jpg" alt="Chicago" width="1100" height="500">
+								<img src="imgs/corée.jpg" alt="Chicago" width="1100" height="500">
 								<div class="carousel-caption">
-									<h3>Chicago</h3>
-									<p>Thank you, Chicago!</p>
+									<h3>Promotion exceptionnelle sur votre séjour en Corée du Nord!</h3>
+									<p>L'aller simple à prix simple!</p>
 								</div>
 							</div>
 							<div class="carousel-item">
 								<img src="imgs/tchetchenie.jpg" alt="New York" width="1100" height="500">
 								<div class="carousel-caption" style="color: red">
-									<h3>New York</h3>
-									<p>We love the Big Apple!</p>
+									<h3>La folle ambiance Tchétchène</h3>
+									<p>A prix fou!</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-4"  ng-repeat="data in mydata">
+								<div class="card">
+									<img class="card-img-top" src="..." alt="Card image cap">
+									<div class="card-body">
+										{{data.id}}
+										<h5 class="card">{{data.picture}}</h5>
+										<p class="card-text">{{data.price}} {{data.image}} {{data.name}} {{data.category}}</p>
+										<a href="#/pay" class="btn btn-primary">Plus d'info</a>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -78,7 +99,7 @@
 						<div class="row">
 							<div class="col-md-12" id="body">
 								<div  class="jumbotron" ng-repeat="productoTienda in productosTienda">
-									<h4>{{productoTienda.name}}</h4>
+									<h4>{{productoTienda.name}} </h4>
 									<img ng-src="{{productoTienda.picture}}" id="photo" /> <br>
 									<input type="number" ng-init="productoTienda.total=0" ng-model="productoTienda.total">
 								</input>
@@ -154,13 +175,5 @@
 											</div>
 										</div>
 									</div>
-									<ul>
-										<div  ng-repeat="data in mydata">
-											{{data.id}}
-											<h5 class="jumbotron">{{data.picture}}</h5>
-											<p class="card-text">{{data.price}} {{data.image}} {{data.name}} {{data.category}}</p>
-											<a href="#/pay" class="btn btn-primary">Plus d'info</a>
-										</div>
-									</ul>
 								</div>
 							</div>

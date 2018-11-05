@@ -18,3 +18,13 @@
 body{
   background-image: url(https://vivaldi.com/wp-content/uploads/2018/02/texture_marble.png);
 }
+
+.navbar{background: #141452; height: 105px;
+font-size: 20px;
+.nav-item::after{content:'';display:block;width:0px;height:5px;background: #05668d;transition: 0.2s;}
+.nav-item:hover::after{width:100%;}
+.nav-link{padding:45px 5px;transition:0.2s;}
+.single-chart {
+  width: 33%;
+  justify-content: space-around ;
+}

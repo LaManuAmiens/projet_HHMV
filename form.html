@@ -1,0 +1,27 @@
+<div class=jumbotron>
+<form name="formulaire">
+  <div>
+    <input type="text" placeholder="Nom et Prénom" name="name" ng-model="name" required minlength="3">
+    <span ng-show="formulaire.names.$error.required">Requis</span>
+    <span ng-show="formulaire.names.$error.minlength">Doit comporter au moins 3 caractères</span>
+  </div>
+  <div>
+    <input type="email" placeholder="Entrer adresse mail" name="email" ng-model="email" required>
+    <span ng-show="formulaire.mail.$error.required">Requis</span>
+    <span ng-show="formulaire.mail.$error.email">Vous devez entrer une adresse mail valide</span>
+  </div>
+  <div>
+    <input type="text" placeholder="Sujet" name="subject" ng-model="subject" required max-length="15">
+    <span ng-show="formulaire.subject.$error.required">Requis</span>
+  </div>
+  <div>
+    <textarea style="width: 600px; height: 300px" placeholder="Texte" name="text" ng-model="text" required></textarea>
+    <span ng-show="formulaire.texte.$error.required">Requis</span>
+  </div>
+  <button type="button" ng-click="sendIt()">Send</button>
+</form>
+<ul>
+  <!-- $index recherche la première ligne du tableau -->
+  <li ng-repeat="subject in subjectList"><a href="#!/view/{{$index}}">{{subject}}</a></li>
+</ul>
+</div>

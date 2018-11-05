@@ -1,0 +1,20 @@
+#photo {
+  height: 80%;
+  width:  100%;
+}
+#navbar {
+
+
+}
+#modal {
+  width: 120%;
+
+}
+.carousel-inner img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20%;
+}
+body{
+  background-image: url(https://vivaldi.com/wp-content/uploads/2018/02/texture_marble.png);
+}

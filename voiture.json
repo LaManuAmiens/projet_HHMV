@@ -1,0 +1,8 @@
+[
+  {"id": "1324551", "category": "sans retour", "name": "Corée", "price": "300 dispaus", "image" : "http://img/corée.png"},
+  {"id": "2436725", "category": "étoile", "name": "l'espace", "price": "1500", "picture": "imgs/carrito.jpg"},
+  {"id": "3345698", "category": "Detalles", "name": "Carrito con chupetes", "price": "1.2", "picture": "imgs/carrito_chupetes.jpg"},
+  {"id": "4345788", "category": "Detalles", "name": "Cesta", "price": "1.6", "picture": "imgs/cesta.jpg"},
+  {"id": "5731534", "category": "Detalles", "name": "Otros", "price": "0.5", "picture": "imgs/otros.jpg"}
+
+]

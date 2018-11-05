@@ -1,0 +1,166 @@
+<div ng-controller="homeController">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<nav class="navbar navbar-expand-md bg-dark navbar-dark" id="navbar">
+					<a class="navbar-brand" href="#">Agence Tout Ris(k)me</a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="collapsibleNavbar">
+						<ul class="navbar-nav">
+							<li class="nav-item">
+								<a class="nav-link" href="#">Link</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">Link</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">Link</a>
+							</li>
+						</ul>
+					</div>
+					<table>
+						<tr>
+							<td style="color: white" colspan="6">Prix total : {{ roundCurrency(udpShopTotalPrice) }}€</td>
+							<tr>
+								<tr>
+									<td style="color: white"colspan="6">Nombre total d'articles : {{ udpShopTotalProducts }}</td>
+									<tr>
+										<td colspan="6">
+											<a href="#/pay" ng-disabled="udpShopContent.length < 1" class="btn btn-danger large-6">
+												Panier
+											</a>
+											<a ng-disabled="udpShopContent.length < 1" class="btn btn-primary" ng-click="destroy()">
+												Supprimer
+											</a>
+										</td>
+									</tbody>
+								</table>
+							</nav>
+						</div>
+					</div>
+				</div>
+				<!-- Navbar content -->
+				<div class="container">
+					<div id="demo" class="carousel slide" data-ride="carousel">
+						<ul class="carousel-indicators">
+							<li data-target="#demo" data-slide-to="0" class="active"></li>
+							<li data-target="#demo" data-slide-to="1"></li>
+							<li data-target="#demo" data-slide-to="2"></li>
+						</ul>
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img src="imgs/espace2.jpg" alt="Los Angeles" width="1100" height="500">
+								<div class="carousel-caption">
+									<h3>Corée</h3>
+									<p>We had such a great time in LA!</p>
+								</div>
+							</div>
+							<div class="carousel-item">
+								<img src="imgs/espace.jpg" alt="Chicago" width="1100" height="500">
+								<div class="carousel-caption">
+									<h3>Chicago</h3>
+									<p>Thank you, Chicago!</p>
+								</div>
+							</div>
+							<div class="carousel-item">
+								<img src="imgs/tchetchenie.jpg" alt="New York" width="1100" height="500">
+								<div class="carousel-caption" style="color: red">
+									<h3>New York</h3>
+									<p>We love the Big Apple!</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- carte -->
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12" id="body">
+								<div  class="jumbotron" ng-repeat="productoTienda in productosTienda">
+									<h4>{{productoTienda.name}}</h4>
+									<img ng-src="{{productoTienda.picture}}" id="photo" /> <br>
+									<input type="number" ng-init="productoTienda.total=0" ng-model="productoTienda.total">
+								</input>
+								<button type="button" class="btn btn-primary" ng-click="add(productoTienda)">
+									<a href="" ng-click="add(productoTienda)">
+										Prix: {{ roundCurrency(productoTienda.price) }} €
+									</a>
+								</button>
+								<!-- Button trigger modal -->
+								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+									Info
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- fin carte -->
+				<!-- Modal -->
+				<div   class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered" role="document">
+						<div class="modal-content" id="modal">
+							<div class="modal-header">
+								<h5  class="modal-title"  id="exampleModalLongTitle">{{productoTienda}}</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								<div class="panel panel-primary">
+									<div class="panel-heading">Panier</div>
+									<table class="table table-bordered table-striped">
+										<thead>
+											<tr>
+												<th>Id</th>
+												<th>Déstination</th>
+												<th>Quantité</th>
+												<th>Prix ​​unitaire</th>
+												<th>Prix total</th>
+												<th class="col-sm-1"></th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr ng-repeat="prod in udpShopContent">
+												<td>{{prod.id}}</td>
+												<td>{{prod.name}}</td>
+												<td>{{prod.qty}}</td>
+												<td>{{roundCurrency(prod.price)}}€</td>
+												<td>{{roundCurrency(prod.price * prod.qty)}}€</td>
+												<td><a class="btn btn-danger" class="fa fa-trash-o fa-lg" ng-click="remove(prod.id)">Retirer</a></td>
+											</tr>
+											<tr>
+												<td colspan="6">Prix ​​total du panier: {{ roundCurrency(udpShopTotalPrice) }}€</td>
+												<tr>
+													<tr>
+														<td colspan="6">Nombre total d'articles: {{ udpShopTotalProducts }}</td>
+														<tr>
+															<tr>
+																<td colspan="6">
+																	<a href="#/form"class="btn btn-primary">
+																		Passer commande
+																	</a>
+																	<a ng-disabled="udpShopContent.length < 1" class="btn btn-danger" ng-click="destroy()">
+																		supprimer tous
+																	</a>
+																</td>
+															</tbody>
+														</table>
+														<div class="modal-footer">
+															<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<ul>
+										<div  ng-repeat="data in mydata">
+											{{data.id}}
+											<h5 class="jumbotron">{{data.picture}}</h5>
+											<p class="card-text">{{data.price}} {{data.image}} {{data.name}} {{data.category}}</p>
+											<a href="#/pay" class="btn btn-primary">Plus d'info</a>
+										</div>
+									</ul>
+								</div>
+							</div>

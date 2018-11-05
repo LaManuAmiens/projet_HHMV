@@ -1,0 +1,50 @@
+<div class="row">
+	<div class="col-12">
+	<div class= "jumbotron">
+		<div class="panel panel-primary">
+			<div class="panel-heading">Panier</div>
+			<table class="table table-bordered table-striped">
+				<thead>
+					<tr>
+						<th>Id</th>
+						<th>Déstination</th>
+						<th>Quantité</th>
+						<th>Prix ​​unitaire</th>
+						<th>Prix total</th>
+						<th class="col-sm-1"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="prod in udpShopContent">
+						<td>{{prod.id}}</td>
+						<td>{{prod.name}}</td>
+						<td>{{prod.qty}}</td>
+						<td>{{roundCurrency(prod.price)}}€</td>
+						<td>{{roundCurrency(prod.price * prod.qty)}}€</td>
+						<td><a class="btn btn-danger" class="fa fa-trash-o fa-lg" ng-click="remove(prod.id)">Retirer</a></td>
+					</tr>
+					<tr>
+						<td colspan="6">Prix ​​total du panier: {{ roundCurrency(udpShopTotalPrice) }}€</td>
+						<tr>
+							<tr>
+								<td colspan="6">Nombre total d'articles: {{ udpShopTotalProducts }}</td>
+								<tr>
+									<tr>
+										<td colspan="6">
+											<a href="#/"class="btn btn-primary">
+												Aller à la page principale
+											</a>
+											<a href="#/form"class="btn btn-primary">
+												Passer commande
+											</a>
+											<a ng-disabled="udpShopContent.length < 1" class="btn btn-danger" ng-click="destroy()">
+												supprimer tous
+											</a>
+										</td>
+										<tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
